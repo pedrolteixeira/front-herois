@@ -1,0 +1,31 @@
+
+<form class="row g-3 mx-auto mt-3"  autocomplete="off" style="max-width: 800px;" (ngSubmit)="cadastrarHeroi()">
+    <div class="col-md-6">
+      <label class="form-label">Nome</label>
+      <input type="text" name="nome" class="form-control" [(ngModel)]="formData.nome" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Nome Herói</label>
+        <input type="text" name="nomeHeroi" class="form-control" [(ngModel)]="formData.nomeHeroi" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Super Poder</label>
+      <input type="text" name="superPoder" class="form-control" [(ngModel)]="formData.superPoder" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Data de Nascimento</label>
+      <input type="date" name="dataNascimento" class="form-control" [(ngModel)]="formData.dataNascimento" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Altura</label>
+      <input type="float" name="altura" class="form-control" [(ngModel)]="formData.altura" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Peso</label>
+      <input type="float" name="peso" class="form-control" [(ngModel)]="formData.peso" required>
+    </div>
+    <div class="col-md-12 my-5 text-center">
+        <button class="btn btn-primary me-3" type="submit">Cadastrar</button>
+        <button class="btn btn-secondary" type="button" routerLink="/listar-herois">Cancelar</button>
+    </div>
+</form>

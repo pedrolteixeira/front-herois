@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-5">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" routerLink="/cadastro-herois">Adicionar Heróis</button>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <input type="number" class="form-control me-3 rounded-pill" [(ngModel)]="idHeroiFiltro" placeholder="Digite o ID do Herói">
+                <button class="btn btn-secondary" (click)="filtrarHerois()">Buscar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mb-3 mt-5">
+    <div>
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Id</th>
+                    <th class="text-center" scope="col">Nome</th>
+                    <th class="text-center" scope="col">Nome Heroi</th>
+                    <th class="text-center" scope="col">Super Poder</th>
+                    <th class="text-center" scope="col">Data Nascimento</th>
+                    <th class="text-center" scope="col">Altura</th>
+                    <th class="text-center" scope="col">Peso</th>
+                    <th class="text-center" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="herois && herois.length == 0">
+                    <td colspan="9" class="text-center align-middle">
+                        <div class="centered-div">
+                            <p>Não há heróis cadastrados</p>
+                        </div>
+                    </td>
+                </tr>                
+                <tr *ngFor="let heroi of herois">
+                    <td class="text-center align-middle">{{ heroi.id }}</td>
+                    <td class="text-center align-middle">{{ heroi.nome }}</td>
+                    <td class="text-center align-middle">{{ heroi.nomeHeroi }}</td>
+                    <td class="text-center align-middle">{{ heroi.superPoder }}</td>
+                    <td class="text-center align-middle">{{ heroi.dataNascimento | date:'dd/MM/yyyy' }}</td>
+                    <td class="text-center align-middle">{{ heroi.altura }}</td>
+                    <td class="text-center align-middle">{{ heroi.peso }}</td>
+                    <td class="text-center">
+                        <button class="btn btn-secondary me-3" (click)="heroisService.HeroiSelecionado = heroi" routerLink="/editar-herois">Editar</button>
+                        <button class="btn btn-danger" (click)="excluirHeroi(heroi.id)" >Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
