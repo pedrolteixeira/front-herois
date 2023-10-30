@@ -1,5 +1,7 @@
 Esse é o meu front-end em Angular do Desafio de Heróis.
 
+Foi construída uma interface simples e intuitiva utilizando Angular e Bootstrap.
+
 1 -Para iniciar é necessário clonar o repositório com git clone.
 
 2 - Na no terminal já pasta do projeto rodar:
